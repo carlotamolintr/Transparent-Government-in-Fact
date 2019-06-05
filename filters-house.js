@@ -1,13 +1,14 @@
-function nodata (element){
-    
-    if(element ==null){
+function nodata(element) {
+
+    if (element == null) {
         return (" ");
     }
-    else{
+    else {
         return element
     }
 
 }
+//mufdsyg usdygf usdhfu sdufh
 var mydiv = document.querySelector("#divWithTable");
 
 var table = `
@@ -23,29 +24,29 @@ var table = `
     </thead>
     <tbody>`;
 
-    for (i = 0; i < dataHouse.results[0].members.length; i++) {
+for (i = 0; i < dataHouse.results[0].members.length; i++) {
     const rowHTML = `
     <tr>
 
-    <td><a href="${dataHouse.results[0].members[i].url}">${dataHouse.results[0].members[i].first_name +" " + nodata(dataHouse.results[0].members[i].middle_name) +" "+dataHouse.results[0].members[i].last_name}</a></td> 
+    <td><a href="${dataHouse.results[0].members[i].url}">${dataHouse.results[0].members[i].first_name + " " + nodata(dataHouse.results[0].members[i].middle_name) + " " + dataHouse.results[0].members[i].last_name}</a></td> 
     <td>${dataHouse.results[0].members[i].party}</td>
     <td>${dataHouse.results[0].members[i].state}</td>
     <td>${dataHouse.results[0].members[i].seniority}</td>
     <td>${dataHouse.results[0].members[i].votes_with_party_pct}</td>
         </tr>`;
     table += rowHTML;
-    }
-    table += `</tbody>`
-    table += `</table>`
+}
+table += `</tbody>`
+table += `</table>`
 
 
-    mydiv.innerHTML=table;
-
-    
-
+mydiv.innerHTML = table;
 
 
 
-    
-document.getElementById("house-data").innerHTML = JSON.stringify(dataHouse.results[0].members,null,2);
+
+
+
+
+document.getElementById("house-data").innerHTML = JSON.stringify(dataHouse.results[0].members, null, 2);
 console.log(dataHouse);
