@@ -5,14 +5,13 @@
 
 let dataSenate;
 
-// tengo que generar mi variable para el fetch
-
+// llamo a mi función getData para obtener la Api
 
 getData();
 
-
-
-async function getData() {
+//async  delante de function si quiero la otra forma de hacer el fetch.
+//función que permite extraer el api de internet directamente.
+function getData() {
 
     var myApi = {
         headers: ({
@@ -22,12 +21,17 @@ async function getData() {
 
     var url = "https://api.propublica.org/congress/v1/113/senate/members.json"
 
-    let response = await fetch(url, myApi);
-    let dataFinal = await response.json();
 
-    dataSenate = dataFinal;
-    fillStates();
-    generateTable(dataSenate.results[0].members);
+
+    // Otra forma de hacer el fetch, donde dataFInal se espera hasta que response termina. Ponemos el async para hacerlo de este modo
+
+
+    // let response = await fetch(url, myApi);
+    // let dataFinal = await response.json();
+
+    // dataSenate = dataFinal;
+    // fillStates();
+    // generateTable(dataSenate.results[0].members);
 
 
     fetch(url, myApi)
@@ -43,16 +47,15 @@ async function getData() {
 
         })
 
-    // .catch(function(error){
-    //     console.log(error)
-    // })
+        .catch(function (error) {
+            console.log(error)
+        })
 
 
 }
 
 
-
-//-------------------Creación de los filtros--------------------
+//-------------------Creación de los estados en el botón select--------------------
 function fillStates() {
     var fullStates = {
         "AL": "Alabama",
@@ -210,7 +213,7 @@ function input() {
 }
 
 
-//------------------------------------- Creación de la tabla
+//---------------------------- Creación de la tabla-------------------
 
 function generateTable(members) {
 

@@ -1,132 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!--Bootstrap css-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            
-        <!--My styles-->    
-            
-        <link rel="stylesheet" href="assets/stylesheets/styles-attendance-senate-data.css">
-        
-        
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    
-    </head>
-    
-    <body>
-            <header>
-                    <div class="row">
-                       <div class="col-4">
-                               
-                           </div>
-   
-                           <div class="col-8">
-                                   <i class="fas fa-envelope"></i>
-                           </div>
-   
-                       </div>         
-                   </header>
-               
-              
-              <!--/.Navbar -->
-              
-              <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                   
-                   <div class="dropdown show">
-               <a class="btn" href="home.html">Home </a>
-                   </div>
-   
-   
-               <div class="dropdown show">
-                       <a class="btn dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                               Congress 113th
-                       </a>
-                     
-                       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                         <a class="dropdown-item" href="senate-data.html">Senate</a>
-                         <a class="dropdown-item" href="house-data.html">House</a>
-                        
-                       </div>
-                     </div>
-   
-   
-   
-                       <div class="dropdown show">
-                               <a class="btn dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                       Attendance
-                               </a>
-                             
-                               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                 <a class="dropdown-item" href="senate-attendance-starter-page.html">Senate</a>
-                                 <a class="dropdown-item" href="house-attendance-starter-page.html">House</a>
-                                
-                               </div>
-                             </div>
-                 
-                       <div class="dropdown show">
-                                   <a class="btn dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                           Party Loyalty
-                                   </a>
-                                 
-                                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                     <a class="dropdown-item" href="senate-party-loyalty-starter-page.html">Senate</a>
-                                     <a class="dropdown-item" href="house-party-loyalty-starter-page.html">House</a>
-                                    
-                                   </div>
-                                 </div>
-       </nav>        
-        <!--Table container-->
-        <section>
-        <div>
-            <h2>Party Loyalty</h2>
-            <div class="row">
-                <div class="col-6"> 
-                    <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
-                    </div>
-                <div class="col-5">
-                <h2>House at a glance</h2>
-                    <table id="table1" class="align table table-striped">
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                <h2>Least Loyal (Bottom 10% of Party)</h2>
-                <table id="table2" class="align table table-striped">
-                
-                </table>
-                </div>
 
-                <div class="col-6">
+<head>
+  <!--Bootstrap css-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-                    <h2>Most Loyal (Top 10% of Party)</h2>
-                    <table id="table3" class="align table table-striped">
-                    
-                    </table>
-                </div>
+  <!--My styles-->
+
+  <link rel="stylesheet" href="assets/stylesheets/styles-attendance-senate-data.css">
+
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <div class="col-4">
+
+      </div>
+
+      <div class="col-8">
+        <i class="fas fa-envelope"></i>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!--/.Navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="dropdown show">
+      <a class="btn" href="home.html">Home </a>
+    </div>
+
+
+    <div class="dropdown show">
+      <a class="btn dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Congress 113th
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="senate-data.html">Senate</a>
+        <a class="dropdown-item" href="house-data.html">House</a>
+
+      </div>
+    </div>
+
+
+
+    <div class="dropdown show">
+      <a class="btn dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Attendance
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="senate-attendance-starter-page.html">Senate</a>
+        <a class="dropdown-item" href="house-attendance-starter-page.html">House</a>
+
+      </div>
+    </div>
+
+    <div class="dropdown show">
+      <a class="btn dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Party Loyalty
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="senate-party-loyalty-starter-page.html">Senate</a>
+        <a class="dropdown-item" href="house-party-loyalty-starter-page.html">House</a>
+
+      </div>
+    </div>
+  </nav>
+  <!--Table container-->
+  <section>
+    <div>
+
+      <div class="row">
+        <div class="col-6">
+          <h2>Party Loyalty</h2>
+          <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively,
+            tend to be the most faithful in voting for their party's nominee for office and legislation that backs their
+            party's agenda. </p>
+        </div>
+        <div class="col-6">
+          <h2 style="text-align:right">House at a glance</h2>
+          <!-- ESTA TABLA LA HAGO CON VUE:-->
+          <table id="VueTable" class="align table table-striped">
+            <thead>
+              <tr>
+                <th>Party</th>
+                <th>Nº of Repres</th>
+                <th>% Voted w Party</th>
+              </tr>
+
+            </thead>
+            <tbody>
+              <tr>
+                <td>Republicans</td>
+                <td>{{R.length}}</td>
+                <td>{{this.average(this.R).toFixed(2)+"%"}}</td>
+
+              </tr>
+              <tr>
+                <td>Democrats</td>
+                <td>{{D.length}}</td>
+                <td>{{this.average(this.D).toFixed(2)+"%"}}</td>
+              </tr>
+              <tr>
+                <td>Independents</td>
+                <td>{{I.length}}</td>
+                <td>{{this.average(this.I).toFixed(2)+"%"}}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>{{R.length+D.length+I.length}}</td>
+                <td>{{((this.average(this.D)+this.average(this.I)+this.average(this.R))/3).toFixed(2)+"%"}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <table id="table2" class="align table table-striped">
+
+            <h2>Least Loyal (Bottom 10% of Party)</h2>
+
+          </table>
         </div>
 
-        </div>  
-        <script src="pro-congress-113-house.js"></script> 
-        <script src="statistics-house-party.js"></script>  
+        <div class="col-6">
 
-         <!--Jquery first, then tether (tooltips) and last bootrstrap js-->
-         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- </section>
+          <h2>Most Loyal (Top 10% of Party)</h2>
+          <table id="table3" class="align table table-striped">
 
- <!-- Footer -->
-<footer class="page-footer font-small blue">
+          </table>
+        </div>
+      </div>
 
-     <!-- Copyright -->
-     <div class="footer-copyright text-center py-3"> © 2016 TGIF Copyright | All rights reserved
-       </div>
-     <!-- Copyright -->
- 
- 
- 
-</footer>
-<!-- Footer -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+
+    <script src="pro-congress-113-house.js"></script>
+    <script src="statistics-house-party.js"></script>
+
+    <!--Jquery first, then tether (tooltips) and last bootrstrap js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"> © 2016 TGIF Copyright | All rights reserved
+    </div>
+    <!-- Copyright -->
+
+
+
+  </footer>
+  <!-- Footer -->
 </body>
+
 </html>

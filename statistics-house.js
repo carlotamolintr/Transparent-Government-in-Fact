@@ -7,23 +7,23 @@
 var allParty = [];
 var R = [];
 var I = [];
-var D =[];
-var all= [];
+var D = [];
+var all = [];
 
-for(let i=0; i< dataHouse.results[0].members.length; i++){
+for (let i = 0; i < dataHouse.results[0].members.length; i++) {
     allParty.push(dataHouse.results[0].members[i].party);
 
-        if (allParty[i].includes("I")){
-            I.push(allParty[i]);
+    if (allParty[i].includes("I")) {
+        I.push(allParty[i]);
 
-        }
-        else if (allParty[i].includes("R")){
-            R.push(allParty[i]);
-        }
+    }
+    else if (allParty[i].includes("R")) {
+        R.push(allParty[i]);
+    }
 
-        else {
-            D.push(allParty[i]);
-        }
+    else {
+        D.push(allParty[i]);
+    }
 
 }
 console.log(all);
@@ -37,18 +37,18 @@ var percentI = 0;
 
 // Average de los porcentajes de cada partido: 
 
-for (let i=0; i< dataHouse.results[0].members.length;i++){
+for (let i = 0; i < dataHouse.results[0].members.length; i++) {
 
-    if(dataHouse.results[0].members[i].party.includes("R")){
-        percentR = percentR+(dataHouse.results[0].members[i].votes_with_party_pct)/R.length;// percentR en la primera ronda del loop = 0 , en la segunda ronda acumulará el valor de "(dataHouse.results[0].members[i].votes_with_party_pct)/R.length" de la primera. Y así sucesivamente. 
-        }
-    else if (dataHouse.results[0].members[i].party.includes("D")){
-        percentD= percentD+(dataHouse.results[0].members[i].votes_with_party_pct)/D.length;
-        
+    if (dataHouse.results[0].members[i].party.includes("R")) {
+        percentR = percentR + (dataHouse.results[0].members[i].votes_with_party_pct) / R.length;// percentR en la primera ronda del loop = 0 , en la segunda ronda acumulará el valor de "(dataHouse.results[0].members[i].votes_with_party_pct)/R.length" de la primera. Y así sucesivamente. 
+    }
+    else if (dataHouse.results[0].members[i].party.includes("D")) {
+        percentD = percentD + (dataHouse.results[0].members[i].votes_with_party_pct) / D.length;
+
     }
     else {
-        percentI = percentI+(dataHouse.results[0].members[i].votes_with_party_pct)/I.length;
-        
+        percentI = percentI + (dataHouse.results[0].members[i].votes_with_party_pct) / I.length;
+
     }
 }
 
@@ -65,34 +65,35 @@ console.log(percentR);
 
 
 
-    var firstTable = document.querySelector("#table1"); /*The Document method querySelector() returns the first Element within the document that matches*/
-    
+var firstTable = document.querySelector("#table1"); /*The Document method querySelector() returns the first Element within the document that matches*/
 
-    var firstT = `
+
+var firstT = `
         <table class="table">
         <thead >
         <tr>
         <th>Party</th>
         <th>Nº of Repres </th>
         <th>% Voted w Party </th>
-        <tr>
-    
+        </tr>
+        </thead>
+        <tbody>
         <td>Democrats</td><td>${(D.length)}</td><td>${percentD.toFixed(2)}</td> 
         </tr>
-       
+       <tr>
         <td>Republicans</td><td>${(R.length)}</td><td>${percentR.toFixed(2)}</td>
         </tr>
-        
-        <td>Independents</td><td>${(I.length)}</td><td>${percentI.toFixed(2)}</td>
-        <td></td>
         <tr>
-        <td>Total</td><td>${(D.length+R.length+I.length)}</td><td>${((percentD+percentR+percentI)/3).toFixed(2)}</td>
-        <td></td>
+        <td>Independents</td><td>${(I.length)}</td><td>${percentI.toFixed(2)}</td>
+        </tr>
+        <tr>
+        <td>Total</td><td>${(D.length + R.length + I.length)}</td><td>${((percentD + percentR + percentI) / 3).toFixed(2)}</td>
     
-        </tr>`
- // Quito los decimales con la función toFixed(n)
+        </tr>
+        </tbody>`
+// Quito los decimales con la función toFixed(n)
 
-    firstTable.innerHTML = firstT; /*innerHTML refers to the contents inside an HTML element*/
+firstTable.innerHTML = firstT; /*innerHTML refers to the contents inside an HTML element*/
 
 
 
@@ -106,32 +107,36 @@ var thirdTable = document.querySelector("#table3");
 
 var missed = [];
 for (let i = 0; i < dataHouse.results[0].members.length; i++) {
-   missed.push(dataHouse.results[0].members[i]);
+    missed.push(dataHouse.results[0].members[i]);
 }
 
 missed.sort(function (a, b) {
-   if (a.missed_votes_pct < b.missed_votes_pct) {
-       return -1;
-   }
-   if (a.missed_votes_pct > b.missed_votes_pct) {
-       return 1;
-   }
-   return 0;
+    if (a.missed_votes_pct < b.missed_votes_pct) {
+        return -1;
+    }
+    if (a.missed_votes_pct > b.missed_votes_pct) {
+        return 1;
+    }
+    return 0;
 });
 
 let top10 = missed.slice(0, missed.length * 0.1);
 let bottom10 = missed.reverse().slice(0, missed.length * 0.1);
 
-var lastpart = missed.slice(missed.length*0.1, missed.length) // trozo de la array que va del 10% hasta el final
+var lastpart = missed.slice(missed.length * 0.1, missed.length) // trozo de la array que va del 10% hasta el final
 
 
-for ( let i=0; i < lastpart.length ; i++){
-  if (lastpart[i].missed_votes_pct == top10[top10.length-1].missed_votes_pct) {
-    top10.push(lastpart[i]);}}
+for (let i = 0; i < lastpart.length; i++) {
+    if (lastpart[i].missed_votes_pct == top10[top10.length - 1].missed_votes_pct) {
+        top10.push(lastpart[i]);
+    }
+}
 
-for ( let i=0; i < lastpart.length ; i++){
- if (lastpart[i].missed_votes_pct == bottom10[bottom10.length-1].missed_votes_pct) {
-   bottom10.push(lastpart[i]);}}
+for (let i = 0; i < lastpart.length; i++) {
+    if (lastpart[i].missed_votes_pct == bottom10[bottom10.length - 1].missed_votes_pct) {
+        bottom10.push(lastpart[i]);
+    }
+}
 
 
 
@@ -150,7 +155,7 @@ for ( let i=0; i < lastpart.length ; i++){
 generatetable(secondTable, top10);
 generatetable(thirdTable, bottom10);
 
-function generatetable(donde, members){
+function generatetable(donde, members) {
 
 
     var table = `
@@ -164,22 +169,22 @@ function generatetable(donde, members){
     </thead>
     <tbody>`;
 
-for (var i = 0; i < members.length; i++) {
-    let rowHTML = `
+    for (var i = 0; i < members.length; i++) {
+        let rowHTML = `
     <tr>
 
-    <td><a href="${members[i].url}">${members[i].first_name + " " + (members[i].middle_name  || "") + " " + members[i].last_name}</a></td> 
+    <td><a href="${members[i].url}">${members[i].first_name + " " + (members[i].middle_name || "") + " " + members[i].last_name}</a></td> 
    
 
     <td>${members[i].missed_votes}</td>
     <td>${members[i].missed_votes_pct}</td>
         </tr>`;
-    table += rowHTML;
-}
-table += `</table></tbody>`
+        table += rowHTML;
+    }
+    table += `</table></tbody>`
 
 
-donde.innerHTML = table; /*innerHTML refers to the contents inside an HTML element*/
+    donde.innerHTML = table; /*innerHTML refers to the contents inside an HTML element*/
 
 }
 
