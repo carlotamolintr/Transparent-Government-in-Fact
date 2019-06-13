@@ -101,21 +101,18 @@
         <p>TGIF works to disclose information in forms that the public can readily find and use. We solicit public
           feedback to identify information of greatest use to the public.</p>
 
-        <!--Button read more-->
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-          aria-controls="collapseExample">
-          Read more
-        </a>
-        <p></p>
       </div>
       <div class="col-5 col-5-img">
 
       </div>
 
+
       <div class="collapse col-12" id="collapseExample">
 
         <h3>Background History of Government Transparency</h3>
-        <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion
+        <p></p>
+        <p id="more" style="display:none">In the West, the idea that government should be open to public scrutiny and
+          susceptible to public opinion
           dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist
           doctrine of state secrecy, a core part of their intellectual project. The passage of formal legislative
           instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland
@@ -140,11 +137,18 @@
       </div>
 
     </div>
+
+    <!--Button read more-->
+    <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+      aria-controls="collapseExample" onclick="readButton(this, 'more')">
+      Read more
+    </button>
+    <p></p>
     </div>
 
 
 
-
+    <script src="main.js"></script>
 
 
     <!--Jquery first, then tether (tooltips) and last bootrstrap js-->
